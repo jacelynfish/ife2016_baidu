@@ -27,7 +27,6 @@ img{
 	float: left;
 }
 .sidebar img{
-
 	border: 1px solid #999;
 	margin-right: 20px;
 }
@@ -38,12 +37,10 @@ img{
 	margin: 20px;
 }
 .content-introduction{
-
 	padding: 20px;
 	margin-left:280px;
 	margin-right: 160px;
 	overflow: hidden;
-
 }
 .content-logo{
 	float: right;
