@@ -8,6 +8,7 @@ img{
 	height: 80px;
 }
 .wrap{
+	min-width:80px;
 	margin: 20px;
 	background-color: #eee;
 	border: 1px solid #999;
