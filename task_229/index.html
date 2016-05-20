@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+body{
+	font-family: "微软雅黑",Arial,sans-serif;
+}
+	label{
+		position: absolute;
+		width:50px;
+		display: inline-block;
+		float: left;
+		text-align: right;
+		margin-top: 10px;
+	}
+	div{
+		padding-left: 70px;
+		display: inline-block;
+		margin-right: 10px;
+	}
+	div input{
+		height: 40px;
+		border-radius: 6px;
+		border: 1px solid #dedede;
+		font-size: 0.8em;
+		padding-left: 16px;
+		width: 300px;
+	}
+	button{
+	background-color: blue;
+	border-radius: 6px;
+	height: 40px;
+	width: 60px;
+	color: white;
+	border: 1px solid blue;
+	margin-top: -10px;
+	font-size: 0.8em;
+	margin-left: 5px;
+	font-family: "微软雅黑",Arial,sans-serif;
+	}
+	div input,button:focus{
+		outline:none;
+	}
+	#info{
+	display: block;
+	font-size: 14px;
+	color: #dedede;
+	padding-top: 4px;
+	}
+</style>
+<script src="index.js"></script>
+<body>
+
+<form action="#">
+	<label for="inName">姓名</label>
+	<div>
+		<input type="text" id="inName" name="inname" maxlength="30">
+		<button>验证</button>
+	<span id="info">必填，长度为4~16个字符</span>	
+	</div>
+	
+</form>
+	
+</body>
+</html> 
