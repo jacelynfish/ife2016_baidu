@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+body{
+	font-family: "微软雅黑",Arial,sans-serif;
+}
+div.wrap{
+	margin-top: 10px;
+}
+	label{
+		position: absolute;
+		width:60px;
+		font-size: 14px;
+		display: inline-block;
+		float: left;
+		text-align: right;
+		margin-top: 10px;
+	}
+	div div{
+		padding-left: 76px;
+		display: inline-block;
+	}
+	div input{
+		height: 40px;
+		border-radius: 6px;
+		border: 1px solid #dedede;
+		font-size: 0.8em;
+		padding-left: 16px;
+		width: 300px;
+	}
+	button{
+	background-color: blue;
+	border-radius: 6px;
+	height: 40px;
+	width: 60px;
+	color: white;
+	border: 1px solid blue;
+	font-size: 0.8em;
+	font-family: "微软雅黑",Arial,sans-serif;
+	margin-left: 335px;
+	margin-top: 1em;
+	}
+	div input,button:focus{
+		outline:none;
+	}
+	.info{
+	display: block;
+	font-size: 14px;
+	color: #dedede;
+	padding-top: 4px;
+	}
+</style>
+<script src="index.js"></script>
+<body>
+
+<form action="#">
+<div class="wrap">
+	<label for="inName">姓名</label>
+	<div>
+		<input type="text" id="inName" name="inname" maxlength="30" required>
+		<span class="info">必填，长度为4~16个字符</span>	
+	</div>
+</div>
+<div class="wrap">
+	<label for="inPWD">密码</label>
+	<div>
+		<input type="password" id="inPWD" name="inpwd" maxlength="30" required>
+		<span class="info" style="display:none;">密码可用</span>
+	</div>
+</div>
+<div class="wrap">
+	<label for="inPWDconfirm">密码确认</label>
+	<div>
+		<input type="password" id="inPWDconfirm" required>
+		<span class="info">再次输入相同密码</span>
+	</div>
+</div>
+<div class="wrap">
+	<label for="inMail">邮箱</label>
+	<div>
+		<input type="email" name="mail" id="inMail" required>
+		<span class="info" style="display:none;">邮箱格式正确</span>
+	</div>
+</div>
+<div class="wrap">
+	<label for="inPhone">手机</label>
+	<div>
+		<input type="text" pattern="\d{11}" name='phone' id="inPhone" required>
+		<span class="info" style="display:none;">手机格式正确</span>
+		
+	</div>
+</div>
+
+	<button>验证</button>
+</form>
+	
+</body>
+</html> 
