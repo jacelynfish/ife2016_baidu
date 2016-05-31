@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='index.js'></script>
+</head>
+<body>
+<form action="#" id="myform">
+<div id="radio">
+	<input type="radio" name="cata" id="inschool" value="inschool">
+	<label for="inschool">在校生</label>
+	<input type="radio" name="cata" id="outschool" value="outschool">
+	<label for="outschool">非在校生</label>
+</div>
+<div id="univ"  style="display:none;">
+	<label for="city_id">学校</label>
+	<select name="city" id="city_id">
+		<option value="pk" id="c1">北京</option>
+		<option value="sh" id='c2'>上海</option>
+		<option value="hz" id='c3'>杭州</option>
+	</select>
+	<select name="school" id="school_id">
+		<option value="pku">北京大学</option>
+		<option value="qhu">清华大学</option>
+		<option value="bhu">北京航天航空学院</option>
+	</select>
+</div>
+<div id="work"  style="display:none;">
+	<label for="cop_id">就业单位</label>
+	<input type="text" name="cop" id="cop_id">
+</div>
+	
+</form>
+
+	
+</body>
+</html>
