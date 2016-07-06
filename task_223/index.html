@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='index.js'></script>
+</head>
+<style>
+	div.inner{
+
+	}
+	div{
+	display: inline-block;
+	padding: 10px;
+	border: 1px solid black;
+	background-color: white;
+	}
+	.active{
+	background-color: blue;
+	}
+</style>
+<body>
+<div id="root">
+	<div><span>super</span>
+		<div><span>car</span>
+			<div class='inner'>
+				<span>apple</span>
+				<div><span>pear</span></div>
+				<div><span>pig</span></div>
+				<div><span>cola</span></div>
+				<div><span>soccer</span></div>
+			</div>
+			<div class='inner'><span>phone</span></div>
+			<div>
+				<div><span>book</span></div>
+				<div><span>school</span></div>
+			</div>
+		</div>
+		<div><span>note</span>
+			<div class='inner'>
+				<span>human</span>
+				<div><span>code</span></div>
+				<div><span>operate</span></div>
+				<div><span>man</span></div>
+			</div>
+			<div class='inner'>
+				<span>program</span>
+				<div><span>bement</span>
+					<div><span>cat</span></div>
+				</div>
+				<div><span>glass</span></div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<button id="front">遍历</button>
+<br>
+<input type="text" id="query">
+<button id='queryBtn'>查询</button>
+</body>
+</html>
