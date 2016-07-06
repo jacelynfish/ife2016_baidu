@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="index.js"></script>
+</head>
+<style>
+	#numbers{
+		padding: 0;
+		margin-top: 10px;
+	}
+	#numbers li{
+		display: inline-block;
+		padding: 0 10px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 25px;
+		background-color: yellow;
+		color: white;
+		margin-right: 10px;
+		font-family: '微软雅黑',Helvetica,sans-serif;
+	}
+
+	textarea{
+		height: 150px;
+		width: 250px;
+		resize: none;
+	}
+	span{
+		background-color: yellow;
+		color: red;
+	}
+</style>
+<body>
+	<input type="text" id="tag-input">
+	<textarea id="list-input"></textarea>
+	<button class='in' id="left-in">左侧入</button>
+	<button class="in" id="right-in">右侧入</button>
+	<button class="out" id="left-out">左侧出</button>
+	<button class="out" id="right-out">右侧出</button>
+	<button id="empty">清空</button>
+	<input type="text" id="query">
+	<button id="queryBtn">查询</button>
+	<ul id="numbers">
+
+	</ul>
+	
+</body>
+</html>
