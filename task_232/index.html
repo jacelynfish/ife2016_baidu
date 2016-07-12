@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task_232 Form Factory</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left-util">
+			<div class="util" id="form-type">
+				<h3 class="util-cap">类型</h3>
+				<select name="type-select" id="form-type-select">
+					<option value="text">输入框</option>
+					<option value="radio">单选框</option>
+					<option value="checkbox">多选框</option>
+					<option value="select">下拉框</option>
+					<option value="textarea">文本域</option>
+				</select>
+			</div>
+			<div class="util" id="form-setting">
+				<h3 class="util-cap">设置</h3>
+				<label for="form-name">标题：</labe>
+				<input type="text" placeholder='请输入表单标题' id='form-name'>
+				<br>
+				<label><input type="radio" name="input-setting" value='must' class='setting'>必填</label>
+				<label><input type="radio" name="input-setting" value='optional' class='setting'>选填</label>
+			</div>
+			<div class="util" id="form-length">
+				<h3 class="util-cap">长度</h3>
+				<span>字符数：</span>
+				<input type="text" id='minCnt'><span> - </span><input type="text" id='maxCnt'>
+			</div>
+			<div class="util" id="form-validate" >
+				<h3 class="util-cap">规则</h3>
+				<select name="validate-select" id="form-validate-select">
+					<option value="text">文本</option>
+					<option value="email">邮箱</option>
+					<option value="password">密码</option>
+				</select>
+			</div>
+			<div class="util" id="form-options" style='display:none;'>
+				<h3 class="util-cap">选项</h3>
+				<input type="text" id='options-input' placeholder='输入回车均可添加选项'>
+				<ul id="options-panel"></ul>
+			</div>
+			<input type="button" value="添加" id="addBtn">
+		</div>
+		<div class="right-pre">
+			<h2 id="pre-cap">点击添加标题</h2>
+			
+			<form action="#" id="final-pre" >
+			<input type="text" id='pre-cap-modify' style='display:none;'>
+				
+				<input type="submit" value="提交">
+			</form>
+		</div>
+	</div>
+</body>
+<script src='script/optionsModule.js'></script>
+<script src='script/dataFactoryModule.js'></script>
+<script src='script/formFactoryModule.js'></script>
+<script src='script/logicModule.js'></script>
+</html>
