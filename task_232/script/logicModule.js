@@ -44,12 +44,14 @@ $$ = function(el) {
 window.onload = function(){
     
     var prePanel = $("#final-pre");
-    
+
+    //初始化表单选项模块的功能
     var panel = $("#options-panel");
     var input = $('#options-input');
     var tagUtil = new TagUtil(panel, input);
     tagUtil.moduleInit();
 
+    //获取表单设置区的每歌模块
     var dataModule = {
         type : $("#form-type"),
         setting: $("#form-setting"),
@@ -59,10 +61,9 @@ window.onload = function(){
         addBtn:$("#addBtn")
     };
 
-
+    //处理不同表单选项时设置模块的不同呈现
     var moduleSelect = $('#form-type-select');
     EventUtil.addEvent(moduleSelect,'change',showModuleHandler);
-
 
     function showModuleHandler(event){
 
@@ -101,10 +102,12 @@ window.onload = function(){
         }
     }
 
+    //当点击添加表单时，传入数据工厂处理序列化表单信息
+    //然后传入表单工厂生成表单
     EventUtil.addEvent(dataModule.addBtn,'click', addHandler);
-
+    var formFactory;
     function addHandler(event){
-        EventUtil.preventDefault(event);
+
         var dataTemplate = {
             type : $("#form-type-select"),
             label : $("#form-name"),
@@ -118,23 +121,55 @@ window.onload = function(){
         var dataFactory = new DataFactory(dataTemplate);
         dataFactory.dataSerialization();
         var data = dataFactory.getData();
-        var formFactory = new FormFactory(data, prePanel);
+        formFactory = new FormFactory(data, prePanel);
         formFactory.addForm();
-
+        EventUtil.preventDefault(event);
     }
 
+    //表单展示区表单提交时，radio和checkbox的额外验证
+    var submitBtn = $('#form-submit');
+    EventUtil.addEvent(submitBtn,'click',function(event){
+
+        var allData = formFactory.getValidatedSet();
+
+        for(var data in allData){
+            console.log(allData[data]);
+            if(allData[data].type != 'text' && allData[data].type != 'textarea' && allData[data].type != 'select' && allData[data].must == true){
+                //循环由表单验证工厂产生的总表单数据，每一项只要是radio或checkbox并且是must为true时（必填）就检测是否已经选择了某项
+                var someChecked = false;
+                var options = document.getElementById(allData[data].tid).getElementsByTagName('input');
+                [].forEach.call(options,function(item,idx,arr){
+                    if(someChecked){
+                        someChecked = true;
+                    }else{
+                        someChecked = item.checked;
+                    }
+                });
+                console.log(someChecked);
+                if(!someChecked){
+                    EventUtil.preventDefault(event);
+                    alert(allData[data].label + '项为必选，请至少选择一项！');
+                }
+            }
+        }
+        $('#datapre').innerHTML = JSON.parse(allData);
+    })
+
+    //点击修改标题组件
     var precap = $('#pre-cap');
     var modify_input = $('#pre-cap-modify');
     EventUtil.addEvent(precap,'click',function(event){
-        console.log('click');
-
-            precap.style.display = 'none';
-            modify_input.style.display = 'block';
+        precap.style.display = 'none';
+        modify_input.style.display = 'block';
+        modify_input.focus();
 
     });
-    EventUtil.addEvent(modify_input,'change',function(event){
+    EventUtil.addEvent(modify_input,'blur',function(event){
         var value = EventUtil.getTarget(event).value;
-        precap.innerHTML = value;
+        if(value!=''){
+            precap.innerHTML = value;
+        }
+
         precap.style.display = 'block';
         modify_input.style.display = 'none';
 

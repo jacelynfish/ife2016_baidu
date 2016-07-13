@@ -83,15 +83,8 @@ TagUtil.prototype.clickHandler = function(event){
 	}
 };
 TagUtil.prototype.moduleInit = function(){
-    console.log('hello');
+    
 	EventUtil.addEvent(this.input, 'keyup', this.keyUpHandler.bind(this));
 	EventUtil.addEvent(this.optionsContainer, 'click', this.clickHandler.bind(this));
 }
 
-// window.onload = function(){
-//     var panel = $("#options-panel");
-//     var input = $('#options-input');
-//     var tagUtil = new TagUtil(panel, input);
-//     tagUtil.moduleInit();
-//
-// }
